@@ -1,0 +1,8 @@
+#!/bin/sh
+# Build win32 dll with main.go
+
+# sudo add-apt-repository ppa:longsleep/golang-backports
+# sudo apt update
+# sudo apt install golang-go gcc-multilib gcc-mingw-w64
+
+GOOS=windows GOARCH=386 CGO_ENABLED=1 CXX=i686-w64-mingw32-g++ CC=i686-w64-mingw32-gcc go build -o main.dll -buildmode=c-shared
